@@ -8,3 +8,13 @@ In the context of machine learning classification, we can rewrite this to find t
 $$
 P(y|X) = \frac{P(X|y) \cdot P(y)}{P(X)}
 $$
+
+
+the code does 
+
+P(SPAM | email) = P(email | SPAM) × P(SPAM)
+P(HAM | email)  = P(email | HAM)  × P(HAM)
+
+Where:
+- P(SPAM) = % of training emails that were spam
+- P(email | SPAM) = probability of seeing these words in spam emails

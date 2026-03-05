@@ -1,0 +1,6 @@
+Subject: Project Update
+Dear Stakeholders,
+We've completed the first phase of development.
+All requirements have been met.
+Best regards,
+Development Team

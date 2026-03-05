@@ -1,0 +1,5 @@
+Dear Customer,
+Unusual activity detected on your account.
+To prevent suspension, please verify your identity within 48 hours:
+https://secure-bank-login-update.com/verify-account
+Account will be locked if not completed.

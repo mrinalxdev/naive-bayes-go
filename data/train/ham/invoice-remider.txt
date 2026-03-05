@@ -1,0 +1,11 @@
+Subject: Invoice #INV-4782 - Payment Due
+
+Dear Mr. Sharma,
+
+This is a friendly reminder that invoice #INV-4782 for ₹45,800 is due in 5 days (due date: 12 March 2026).
+
+Payment details attached. Please let us know if you have any questions.
+
+Thank you,
+Accounts Team
+ABC Services Pvt Ltd

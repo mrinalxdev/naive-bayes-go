@@ -1,0 +1,11 @@
+Subject: Scheduled maintenance – Saturday 07 March 01:00–03:00 IST
+
+Dear all,
+
+We will be performing critical security updates and server maintenance this Saturday between 1:00 AM and 3:00 AM IST.
+The application may be briefly unavailable during this window.
+
+Apologies for any inconvenience.
+
+Best regards,
+IT Operations Team

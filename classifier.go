@@ -57,7 +57,6 @@ func (nb *NaiveBayes) Predict(tokens []string) (string, float64) {
 	return bestClass, bestProb
 }
 
-
 func (nb *NaiveBayes) LogProb(class string, tokens []string) float64 {
 	prior := math.Log(float64(nb.ClassCounts[class]) / float64(totalDocs(nb.ClassCounts)))
 	var likelihood float64

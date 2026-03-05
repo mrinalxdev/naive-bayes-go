@@ -1,0 +1,3 @@
+URGENT: Your electricity account (Consumer No. 456789123) has overdue amount of ₹4,892.
+Pay within 24 hours to avoid disconnection: https://bill-payment-secure.in/pay
+Bill reference: DISCOM-MAR2026-7845
