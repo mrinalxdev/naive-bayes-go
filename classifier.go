@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 type NaiveBayes struct {
 	ClassCounts    map[string]int
 	WordCounts     map[string]map[string]int
@@ -33,9 +35,49 @@ func (nb *NaiveBayes) Train(class string, tokens []string){
 	}
 }
 
-//this will train the model on a slice of documents
-// func (nb *NaiveBayes) Fit(docs []Document) {
-// 	for _, doc := range docs {
-		
-// 	}
-// }
+
+func (nb *NaiveBayes) Fit(docs []Document) {
+	for _, doc := range docs {
+		tokens := Tokenize(doc.Text)
+		nb.Train(doc.Class, tokens)
+	}
+}
+
+
+func (nb *NaiveBayes) Predict(tokens []string) (string, float64) {
+	bestClass := ""
+	bestProb := -math.MaxFloat64
+	for class := range nb.ClassCounts {
+		logProb := nb.LogProb(class, tokens)
+		if logProb > bestProb {
+			bestProb = logProb
+			bestClass = class
+		}
+	}
+	return bestClass, bestProb
+}
+
+
+func (nb *NaiveBayes) LogProb(class string, tokens []string) float64 {
+	prior := math.Log(float64(nb.ClassCounts[class]) / float64(totalDocs(nb.ClassCounts)))
+	var likelihood float64
+	vocabSize := len(nb.Vocabulary) // int
+	totalWordsClass := nb.TotalWords[class] // int
+
+	for _, token := range tokens {
+		tokenCount := nb.WordCounts[class][token] 
+		numerator := float64(tokenCount) + nb.SmoothingAlpha
+		denominator := float64(totalWordsClass + vocabSize)
+		prob := numerator / denominator
+		likelihood += math.Log(prob)
+	}
+	return prior + likelihood
+}
+
+func totalDocs(classCounts map[string]int) int {
+	total := 0
+	for _, cnt := range classCounts {
+		total += cnt
+	}
+	return total
+}
